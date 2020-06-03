@@ -5,6 +5,7 @@ import com.iksflow.springboot.web.dto.PostsResponseDto;
 import com.iksflow.springboot.web.dto.PostsSaveRequestDto;
 import com.iksflow.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
