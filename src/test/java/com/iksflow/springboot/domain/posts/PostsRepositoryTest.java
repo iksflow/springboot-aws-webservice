@@ -1,5 +1,6 @@
 package com.iksflow.springboot.domain.posts;
 
+import com.iksflow.springboot.web.dto.PostsSaveRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,10 +47,9 @@ public class PostsRepositoryTest {
         assertThat(posts.getContent()).isEqualTo(content);
     }
 
-    @Test
     public void BaseTimeEntity_등록() {
         // given
-        LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
+        LocalDateTime now = LocalDateTime.of(2021, 2, 16, 2, 0, 0);
         postsRepository.save(Posts.builder()
                 .title("title")
                 .content("content")
@@ -61,7 +61,7 @@ public class PostsRepositoryTest {
 
         // then
         Posts posts = postsList.get(0);
-        System.out.println(">>>>>>>>>>> createDate = " + posts.getCreatedDate() + ", modifiedDate = " + posts.getModifiedDate());
+        System.out.println(">>>>>> createDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
 
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
