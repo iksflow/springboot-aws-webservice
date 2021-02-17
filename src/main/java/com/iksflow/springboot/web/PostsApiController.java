@@ -5,7 +5,6 @@ import com.iksflow.springboot.web.dto.PostsResponseDto;
 import com.iksflow.springboot.web.dto.PostsSaveRequestDto;
 import com.iksflow.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -29,6 +28,9 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
-
-//    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto )
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
+    }
 }
